@@ -113,9 +113,9 @@ form.addEventListener("submit", function(e) {
     hideform.style.display = " none"; /*fermer le formulmaire*/
 
     const titre = document.querySelector("#titre").value;
-    const operator = document.querySelector("#operator").value;
-    const desc = document.querySelector("#desc").value;
-    const montant = document.querySelector("#montant").value;
+    const operator = document.querySelector("#operator").value
+    const desc = document.querySelector("#desc").value
+    const montant = document.querySelector("#montant").value
 
 
     console.log(operator); /*affiche avec la console*/
@@ -125,7 +125,7 @@ form.addEventListener("submit", function(e) {
 
     /*ajout des donnees du formulaire dans html*/
 
-    const results = document.querySelector("#results");
+    const results = document.querySelector("#results")
 
     let img = document.querySelector("img").src
         /*image selon operation*/
@@ -137,11 +137,11 @@ form.addEventListener("submit", function(e) {
     }
 
 
-    if (operator == "credit") {
-        operator.push(parseInt(montant));
-        console.log(operator);
-        sumArray();
-        results.innerHTML += `
+    /* if (operator == "credit") {
+         operator.push(parseInt(montant));
+         console.log(operator);
+         sumArray();*/
+    results.innerHTML += `
 <div class="operation ${operator}">
           <div class="grid-x grid-padding-x align-middle">
             <div class="cell shrink">
@@ -163,8 +163,8 @@ form.addEventListener("submit", function(e) {
             </div>
           </div>
         </div>
-        `;
-    } else {
+        `
+        /* } else {
         operator.push(parseInt(-montant));
         console.log(operator);
         sumArray();
@@ -190,10 +190,14 @@ form.addEventListener("submit", function(e) {
             </div>
           </div>
         </div>
-        `;
-    }
+        `;*/
 
-    let soldeArray = []; //liste pour conserver les valeurs du solde
+
+    let solde = document.querySelector(solde)
+    solde = results.count.innertext
+
+
+    /*let soldeArray = []; //liste pour conserver les valeurs du solde
     function sumArray() {
         let solde = 0;
 
@@ -202,58 +206,60 @@ form.addEventListener("submit", function(e) {
         }
         console.log(solde);
 
-    };
+    };*/
 
 
 
 
-    /*form.reset(); // Reset les champs du formulaire
-    return false; // Evite le refresh de la page **/
+    form.reset(); // Reset les champs du formulaire
+    return false; // Evite le refresh de la page 
+
+});
 
 
 
 
-    /*function solde() {
+/*function solde() {
+    document.getElementById("solde").value = document.getElementById("solde").value + document.querySelector("#montant").value;
+}
+
+console.log(function solde() {
         document.getElementById("solde").value = document.getElementById("solde").value + document.querySelector("#montant").value;
     }
 
-    console.log(function solde() {
-            document.getElementById("solde").value = document.getElementById("solde").value + document.querySelector("#montant").value;
-        }
+);
 
-    );
+/*document.querySelector('#solde').innerHTML = ``*/
+/*let solde = document.querySelector("solde")
+solde = results.count.innertext*/
+/*let soldeArray = [];
 
-    /*document.querySelector('#solde').innerHTML = ``*/
-    /*let solde = document.querySelector("solde")
-    solde = results.count.innertext*/
-    /*let soldeArray = [];
-
-    function sumArray() {
-        let solde = 0;
-        for (let i = 0; i < comptetotal.length; i++) {
-            solde += comptetotal[i];
-        }
-        console.log(solde);
+function sumArray() {
+    let solde = 0;
+    for (let i = 0; i < comptetotal.length; i++) {
+        solde += comptetotal[i];
     }
+    console.log(solde);
+}
 
-    /*pour afficher message sous le solde*/
+/*pour afficher message sous le solde*/
 
-    let good = document.getElementById("good");
-    let bad = document.getElementById("bad");
-    let verybad = document.getElementById("verybad");
+/*let good = document.getElementById("good");
+let bad = document.getElementById("bad");
+let verybad = document.getElementById("verybad");
 
-    if (comptetotal >= 300) {
-        good.style.display = "block";
-        bad.style.display = "none";
-        verybad.style.display = "none";
-
-    } else if (comptetotal < 300) {
-        good.style.display = "none";
-        bad.style.display = "block";
-        verybad.style.display = "none";
-
-    } else(comptetotal < 0)
-    good.style.display = "none";
+if (comptetotal >= 300) {
+    good.style.display = "block";
     bad.style.display = "none";
-    verybad.style.display = "block";
-});
+    verybad.style.display = "none";
+
+} else if (comptetotal < 300) {
+    good.style.display = "none";
+    bad.style.display = "block";
+    verybad.style.display = "none";
+
+} else(comptetotal < 0)
+good.style.display = "none";
+bad.style.display = "none";
+verybad.style.display = "block";
+});*/
